@@ -1,9 +1,5 @@
-import express from 'express'
-import notesRouter from './routes/notes.js'
+import app from './server.js'
 
-const app = express()
-
-// Routes for notes
-app.use('/notes', notesRouter)
-
-export default app
+app.listen(3001, () => {
+  console.log('hello on http://localhost:3001')
+})
