@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {createNote, getNotes} from './handlers/note.js'
+import {createNote, deleteNote, getNotes} from './handlers/note.js'
 
 const router: Router = Router()
 
@@ -8,5 +8,6 @@ const router: Router = Router()
  */
 router.get('/note', getNotes)
 router.post('/note', createNote)
+router.delete('/note/:id', deleteNote)
 
 export default router
