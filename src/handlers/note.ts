@@ -23,3 +23,13 @@ export const createNote = async (req: Request, res: Response) => {
 
   res.json({data: note})
 }
+
+export const deleteNote = async (req: Request, res: Response) => {
+  const note = await prisma.note.delete({
+    where: {
+      id: String(req.params.id),
+    },
+  })
+
+  res.json({data: note})
+}
