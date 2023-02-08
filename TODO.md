@@ -1,6 +1,5 @@
 # User Stories
 
-- As a user, I can delete a note.
 - As a user, I can edit a note's content.
 - As a user, I can edit a note's title.
 - As a user, I can see when a note was last updated.
