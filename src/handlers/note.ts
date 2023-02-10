@@ -46,3 +46,15 @@ export const deleteNote = async (req: Request, res: Response) => {
 
   res.json({data: note})
 }
+
+// Update a note
+export const updateNote = async (req: Request, res: Response) => {
+  const note = await prisma.note.update({
+    where: {
+      id: String(req.params.id),
+    },
+    data: req.body,
+  })
+
+  res.json({data: note})
+}
