@@ -8,4 +8,6 @@
 - [x] As a user, I can see when a note was last updated.
 - [x] As a user, I can get a list of all notes' titles.
 - [x] As a user, I can search for a note, based on id.
+- [x] As a user, I can edit a note's content.
+- [x] As a user, I can edit a note's title.
 - [x] As a dev, I can view logs in the console of the API.
