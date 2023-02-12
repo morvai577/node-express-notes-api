@@ -1,4 +1,5 @@
 import {Request, Response} from 'express'
+import {validationResult} from 'express-validator'
 import prisma from '../db.js'
 
 // Get a particular note
@@ -26,6 +27,13 @@ export const getNotes = async (req: Request, res: Response) => {
 
 // Create a new note
 export const createNote = async (req: Request, res: Response) => {
+  const errors = validationResult(req)
+
+  if (!errors.isEmpty()) {
+    res.status(400)
+    return res.json({errors: errors.array()})
+  }
+
   const note = await prisma.note.create({
     data: {
       title: req.body.title,
