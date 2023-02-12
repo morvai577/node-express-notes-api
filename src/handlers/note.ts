@@ -8,7 +8,7 @@ export const getNote = async (req: Request, res: Response) => {
       id: String(req.params.id),
     },
   })
-  res.json({data: note})
+  return res.json({data: note})
 }
 
 // Get all notes
@@ -21,7 +21,7 @@ export const getNotes = async (req: Request, res: Response) => {
     },
   })
 
-  res.json({data: notes})
+  return res.json({data: notes})
 }
 
 // Create a new note
@@ -33,7 +33,7 @@ export const createNote = async (req: Request, res: Response) => {
     },
   })
 
-  res.json({data: note})
+  return res.json({data: note})
 }
 
 // Delete a note
@@ -44,7 +44,7 @@ export const deleteNote = async (req: Request, res: Response) => {
     },
   })
 
-  res.json({data: note})
+  return res.json({data: note})
 }
 
 // Update a note
@@ -56,5 +56,5 @@ export const updateNote = async (req: Request, res: Response) => {
     data: req.body,
   })
 
-  res.json({data: note})
+  return res.json({data: note})
 }
