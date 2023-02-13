@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {body} from 'express-validator'
+import {body, param} from 'express-validator'
 import {
   createNote,
   deleteNote,
@@ -13,9 +13,12 @@ const router: Router = Router()
 /**
  * Note
  */
-router.get('/note/:id', getNote)
+router.get(
+  '/note/:id',
+  param('id').isUUID(4).withMessage('Invalid ID'),
+  getNote,
+)
 router.get('/note', getNotes)
-router.post('/note', body('title').not().isEmpty(), createNote)
 router.post('/note', body('title').not().isEmpty().isAlphanumeric(), createNote)
 router.delete('/note/:id', deleteNote)
 router.put('/note/:id', updateNote)
