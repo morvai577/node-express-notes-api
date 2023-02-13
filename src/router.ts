@@ -16,6 +16,7 @@ const router: Router = Router()
 router.get('/note/:id', getNote)
 router.get('/note', getNotes)
 router.post('/note', body('title').not().isEmpty(), createNote)
+router.post('/note', body('title').not().isEmpty().isAlphanumeric(), createNote)
 router.delete('/note/:id', deleteNote)
 router.put('/note/:id', updateNote)
 
