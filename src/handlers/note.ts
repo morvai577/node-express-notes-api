@@ -4,6 +4,13 @@ import prisma from '../db.js'
 
 // Get a particular note
 export const getNote = async (req: Request, res: Response) => {
+  const errors = validationResult(req)
+
+  if (!errors.isEmpty()) {
+    res.status(400)
+    return res.json({errors: errors.array()})
+  }
+
   const note = await prisma.note.findUnique({
     where: {
       id: String(req.params.id),
