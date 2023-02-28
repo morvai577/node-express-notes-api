@@ -13,3 +13,4 @@
 - [x] As a user, I can edit a note's content.
 - [x] As a user, I can edit a note's title.
 - [x] As a dev, I can view logs in the console of the API.
+- [x] As a dev, I can seed sample data to the database.
