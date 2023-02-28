@@ -7,7 +7,9 @@
   "scripts": {
     "build": "tsc",
     "prepare": "husky install",
-    "dev": "tsx watch src/index.ts"
+    "local:db": "docker compose up -d",
+    "dev": "tsx watch src/index.ts",
+    "seed": "tsx src/seed.ts"
   },
   "lint-staged": {
     "./src/**/*.{ts}": [
